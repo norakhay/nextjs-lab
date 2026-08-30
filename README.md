@@ -1,27 +1,44 @@
 # nextjs-lab
 
-## How this app was started
+Simple steps I used to start this Next.js app.
 
-From `nextjs-lab`, create a Next.js 13.4 app with TypeScript and Tailwind:
+## 1. Create the app
+
+From `nextjs-lab`, I created the project with Next.js 13.4:
 
 ```bash
 npx create-next-app@13.4
 ```
 
-That created the project in `next-app` with:
+This installs React, Next.js, TypeScript, Tailwind, and ESLint.
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- ESLint
+![Installing dependencies](docs/create-next-app-install.png)
 
-## Run the app
+When it finished, the app was created at `next-app`:
+
+![App created](docs/create-next-app-success.png)
+
+## 2. Database
+
+The app uses Prisma with MySQL. Add this to a `.env` file in `next-app`:
+
+```
+DATABASE_URL="mysql://USER:PASSWORD@localhost:3306/next_course"
+```
+
+Then run:
+
+```bash
+npx prisma generate
+```
+
+## 3. Run the app
 
 ```bash
 cd next-app
-npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+![Dev server](docs/npm-run-dev.png)
